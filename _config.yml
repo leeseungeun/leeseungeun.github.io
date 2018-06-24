@@ -193,12 +193,12 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: ""
-      type: "_posts"
+      path: "_posts"
+      type: "posts"
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false
       comments: true
       share: true
       related: true
