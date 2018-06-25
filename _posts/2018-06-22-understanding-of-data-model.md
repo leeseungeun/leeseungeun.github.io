@@ -111,7 +111,7 @@ tags: database sql 자격증 SQLD SQL개발자
 
 
 ## 데이터 모델의 표기법인 ERD의 이해
-![ERD example](/assets/images/2018-06-22-understanding-of-data-model-01-erd.svg)
+![ERD example](../assets/images/2018-06-22-understanding-of-data-model-01-erd.svg)
 ERD 예시 (출처: https://commons.wikimedia.org/wiki/File:ERD_Representation.svg)
 
 
