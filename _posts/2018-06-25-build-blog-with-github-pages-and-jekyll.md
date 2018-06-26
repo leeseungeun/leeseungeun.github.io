@@ -7,7 +7,6 @@ tags: ["github pages", "jekyll"]
 
 블로그에 공부한 바를 정리하기 위해서, Github Pages와 Jekyll을 사용하게 되었습니다.
 
-- - -
 
 ## Github Pages [^1]
 Github 리포지토리를 통해 정적 사이트를 호스팅하는 서비스로,
@@ -37,7 +36,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
     Jekyll은 루비를 기반으로 하기 때문에, 도커를 이용해 우분투 개발 환경을 설정했습니다.
 
 
-    자세한 방법은 [해당 포스팅](../2018-06-25-run-linux-on-windows-03-docker.md)을 참고해주세요.
+    자세한 방법은 [해당 포스팅](../run-linux-on-windows-03-docker.md)을 참고해주세요.
 
 
 2. Jekyll 설치
@@ -112,7 +111,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
     Gemfile 편집이 완료되면 ```bundle``` 명령어를 실행합니다.
 
 
-    이떄 ```Bundler could not find compatible versions for gem ```라는 메시지가 나타나면
+    이때 ```Bundler could not find compatible versions for gem ```라는 메시지가 나타나면
 
 
     메시지대로 ```bundle update```를 실행합니다.
@@ -163,6 +162,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
 
         ```_data/navigation.yml```과 ```_pages/tag-archive.html```을 추가합니다.[^8]
         * ```_data/navigation.yml```
+        
         ```
         # main links
         main:
@@ -170,6 +170,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
               url: /tags
         ```
         * ```_pages/tag-archive.html```
+        
         ```
         ---
         title: "Posts by Tag"
@@ -252,13 +253,13 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
     해당 리포지토리에 작업한 내용을 커밋 및 푸시하면 ```https://user_name.github.io```에 블로그 내용이 표시됩니다!
 
 
-[^1] https://help.github.com/articles/what-is-github-pages
-[^2] https://jekyllrb-ko.github.io/docs/home/
-[^3] https://stackoverflow.com/questions/164896/limitations-in-running-ruby-rails-on-windows
-[^4] https://www.reddit.com/r/ruby/comments/65n186/is_rubyror_on_windows_really_that_bad
-[^5] http://blog.napier.kr/blog/2016/09/01/jekyll-ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
-[^6] https://github.com/mmistakes/minimal-mistakes
-[^7] https://stackoverflow.com/questions/30780988/error-installing-nokogiri-in-ubuntu-14-0-4-ruby-1-8-7
-[^8] https://junhobaik.github.io/jekyll-apply-theme
-[^9] https://opentutorials.org/course/2473/13865
-[^10] https://mmistakes.github.io/minimal-mistakes/docs/configuration
+[^1]: https://help.github.com/articles/what-is-github-pages
+[^2]: https://jekyllrb-ko.github.io/docs/home/
+[^3]: https://stackoverflow.com/questions/164896/limitations-in-running-ruby-rails-on-windows
+[^4]: https://www.reddit.com/r/ruby/comments/65n186/is_rubyror_on_windows_really_that_bad
+[^5]: http://blog.napier.kr/blog/2016/09/01/jekyll-ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
+[^6]: https://github.com/mmistakes/minimal-mistakes
+[^7]: https://stackoverflow.com/questions/30780988/error-installing-nokogiri-in-ubuntu-14-0-4-ruby-1-8-7
+[^8]: https://junhobaik.github.io/jekyll-apply-theme
+[^9]: https://opentutorials.org/course/2473/13865
+[^10]: https://mmistakes.github.io/minimal-mistakes/docs/configuration
