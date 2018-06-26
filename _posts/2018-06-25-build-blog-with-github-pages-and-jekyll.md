@@ -36,7 +36,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
     Jekyll은 루비를 기반으로 하기 때문에, 도커를 이용해 우분투 개발 환경을 설정했습니다.
 
 
-    자세한 방법은 [해당 포스팅](../run-linux-on-windows-03-docker.md)을 참고해주세요.
+    자세한 방법은 [해당 포스팅](../run-linux-on-windows-03-docker)을 참고해주세요.
 
 
 2. Jekyll 설치
@@ -170,7 +170,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
               url: /tags
         ```
         * ```_pages/tag-archive.html```
-        
+
         ```
         ---
         title: "Posts by Tag"
