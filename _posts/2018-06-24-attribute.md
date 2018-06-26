@@ -1,5 +1,4 @@
 ---
-layout: single
 title:  "속성 (Attribute)"
 date:   2018-06-24 21:12:05 +0900
 tags: database sql 자격증 SQLD SQL개발자

@@ -1,5 +1,4 @@
 ---
-layout: single
 title:  "데이터 모델의 이해"
 date:   2018-06-22 20:54:05 +0900
 tags: database sql 자격증 SQLD SQL개발자
