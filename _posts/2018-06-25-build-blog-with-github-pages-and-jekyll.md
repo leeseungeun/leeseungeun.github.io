@@ -110,34 +110,45 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
 
     Gemfile 편집이 완료되면 ```bundle``` 명령어를 실행합니다.
 
+    - - -
 
-    이때 ```Bundler could not find compatible versions for gem ```라는 메시지가 나타나면
+    아래의 내용은 ```bundle``` 명령어를 실행하며 발생한 에러를 적용한 내용입니다.  
+
+    설치 환경 등에 따라 아래 에러를 만나지 않으실 수도, 해결 방법이 다를 수도 있습니다.  
+
+    1. ```bundle``` 명령어 실행 결과, ```Bundler could not find compatible versions for gem ```라는 메시지가 나타나면
 
 
-    메시지대로 ```bundle update```를 실행합니다.
+        메시지대로 ```bundle update```를 실행합니다.
+
+    2. ```bundle update``` 실행 중 아래와 같은 메시지가 나타날 수 있습니다.
 
 
-    저는 ```bundle update``` 실행 중 아래와 같은 메시지가 나타났습니다.
+        ```
+        An error occurred while installing nokogiri (1.4.7), and Bundler cannot
+        continue. Make sure that `gem install nokogiri -v '1.4.7'` succeeds before bundling.
+        ```
+        저의 경우 nokogiri 젬의 의존성 때문에 문제가 발생했습니다.
+
+        ```
+        apt-get install zlib1g-dev
+        apt-get install libxml2-dev
+        ```
+        이에 따라 위의 명령어를 실행함으로써, zlib1g-dev와 libxml2-dev를 설치해 문제를 해결했습니다.[^7]
+
+    - - -
+
+    ```bundle update```로써 젬을 업데이트했다면 ```_config.yml```를 아래와 같이 수정합니다.
+    
     ```
-    An error occurred while installing nokogiri (1.4.7), and Bundler cannot
-    continue. Make sure that `gem install nokogiri -v '1.4.7'` succeeds before bundling.
-    ```
-    해당 문제는 
+    # theme 또는 remote_theme 엔트리에 적용하고자 하는 테마 외의 설정이 되어 있다면, 아래와 같이 해당 내용을 주석 처리하거나 삭제해줍니다.
+    # theme: "some-theme" 
+    # remote_theme: "some-other-theme" 
+    remote_theme: "mmistakes/minimal-mistakes" # 적용하고자 하는 테마 관련 코드를 추가해줍니다.
+    
+    ``` 
 
-    ```
-    apt-get install zlib1g-dev
-    apt-get install libxml2-dev
-    ```
-    명령어를 실행해 zlib1g-dev와 libxml2-dev를 설치함으로써 해결했습니다.[^7]
-
-
-    ```bundle update```로써 젬을 업데이트했다면 ```_config.yml```에 ```remote_theme: "mmistakes/minimal-mistakes"``` 코드를 추가하고,
-
-
-    ```theme: ``` 또는 ```remote_theme: ``` 엔트리를 삭제합니다.
-
-
-    ```remote_theme:```과 ```"mmistakes/minimal-mistakes"``` 사이에 **공백이 없을 경우** 페이지 빌드에 실패하므로 유의하시는 편이 좋습니다!
+    ```_config.yml```에 ```remote_theme: "mmistakes/minimal-mistakes"```를 추가할 때 ```remote_theme:```과 ```"mmistakes/minimal-mistakes"``` 사이에 **공백이 없을 경우** 페이지 빌드에 실패하므로 유의하시는 편이 좋습니다!
 
 
     마지막으로 
@@ -194,6 +205,9 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
 
 
         Minimal-Mistakes-Jekyll-Theme에서는 ```_config.yml```의 편집으로 간단하게 댓글 기능을 추가할 수 있습니다.
+
+
+        (다른 테마를 사용하는 경우 Disqus 적용 방식이 달라질 수 있으므로 사용하시는 테마의 docs를 참고해주세요!)
 
 
         Disqus에 회원가입해 ```Website Name, Website URL, Category, Language``` 기입하면 Web Site가 생성됩니다. 
