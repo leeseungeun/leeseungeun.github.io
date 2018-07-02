@@ -48,7 +48,7 @@ tags: database sql 자격증 SQLD SQL개발자
     * 원으로 표시
 * 0:0 (Zero to Zero)의 관계는 잘못되었을 확률이 높으므로 검토 필요
 
-![Relationship example](../assets/images/2018-07-02-relationship.pngS)
+![Relationship example](../assets/images/2018-07-02-relationship-01-relationship.png)
 관계 표현 예시
 
 
