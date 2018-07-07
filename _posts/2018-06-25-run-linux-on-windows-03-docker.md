@@ -114,6 +114,8 @@ docker store에서의 Docker Community Edition for Windows 다운로드 화면�
     * 어플리케이션을 실행하는 데 필요한 모든 것을 포함하고 있는, 실행 가능한 패키지[5] 
 * 도커 컨테이너
     * 이미지의 인스턴스[6]
+
+    
 - - -
 
 * MySql
