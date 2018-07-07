@@ -139,9 +139,9 @@ docker run --name mysql-container-name -e MYSQL_ROOT_PASSWORD=password -d mysql:
 
 옵션|설명
 ----|----
---name | 컨테이너에 이름을 부여
--e | 환경 변수 설정 (각 컨테이너 별로 설정할 수 있는 환경 변수는 [도커 허브](https://hub.docker.com)를 확인)
--d | 백그라운드에서 컨테이너 실행
+```--name``` | 컨테이너에 이름을 부여
+```-e``` | 환경 변수 설정 (각 컨테이너 별로 설정할 수 있는 환경 변수는 [도커 허브](https://hub.docker.com)를 확인)
+```-d``` | 백그라운드에서 컨테이너 실행
 
 
 도커 컨테이너 생성을 확인하시고 싶으실 경우 ```docker ps -a```명령어를 cmd.exe 또는 Powershell에서 실행합니다.
@@ -183,11 +183,11 @@ docker run -i -t -v /drive/local-directory/:/container-directory -p host-port-nu
 
 옵션|설명
 ----|----
--i | -t 옵션과 함께 사용하고 컨테이너에 어태치 (attach)되지 않을 때에도 STDIN (Standard Input, 표준 입력) 유지
--t | -i 옵션과 함께 사용하고 Bash를 사용하기 위해 pseudo-TTY(터미널 에뮬레이터[10]) 지원
--v | 호스트의 볼륨을 컨테이너에 마운트 (mount)
--p | 도커의 포트를 호스트의 포트에 퍼블리시 (publish)
---link | 실행하고자 하는 컨테이너에 다른 컨테이너를 연결
+```-i``` | ```-t``` 옵션과 함께 사용하고 컨테이너에 어태치 (attach)되지 않을 때에도 STDIN (Standard Input, 표준 입력) 유지
+```-t``` | ```-i``` 옵션과 함께 사용하고 Bash를 사용하기 위해 pseudo-TTY(터미널 에뮬레이터[10]) 지원
+```-v``` | 호스트의 볼륨을 컨테이너에 마운트 (mount)
+```-p``` | 도커의 포트를 호스트의 포트에 퍼블리시 (publish)
+```--link``` | 실행하고자 하는 컨테이너에 다른 컨테이너를 연결
 
 
 Docker for Windows의 특징 때문에 컨테이너 실행 시 많은 어려움을 겪었었는데, 나타난 순서에 따라 하나씩 정리하고자 합니다.
@@ -195,125 +195,125 @@ Docker for Windows의 특징 때문에 컨테이너 실행 시 많은 어려움�
 1. 마운트할 볼륨 드라이브 지정
 
 
-```docker run```의 ```-v``` 옵션을 사용할 때 마운트할 볼륨을 지정해줘야 합니다.
+    ```docker run```의 ```-v``` 옵션을 사용할 때 마운트할 볼륨을 지정해줘야 합니다.
 
 
-이때 ```\드라이브명\디렉토리``` 형태로 마운트할 볼륨의 드라이브를 지정해주면 됩니다.
+    이때 ```\드라이브명\디렉토리``` 형태로 마운트할 볼륨의 드라이브를 지정해주면 됩니다.
 
 
-중요한 점은 **드라이브명은 소문자를 이용**해야 한다는 점입니다.[11]
+    중요한 점은 **드라이브명은 소문자를 이용**해야 한다는 점입니다.[11]
 
 
 2. 파일 공유 시 방화벽 문제
 
 
-그 다음 만난 문제는 파일 공유 시 방화벽 문제입니다. 문제가 발생하면 아래와 같은 메시지가 나타납니다.
+    그 다음 만난 문제는 파일 공유 시 방화벽 문제입니다. 문제가 발생하면 아래와 같은 메시지가 나타납니다.
 
 
-![Docker Firewall Problem](../assets/images/2018-06-25-run-linux-on-windows-03-docker-05-firewall-detected.png)
+    ![Docker Firewall Problem](../assets/images/2018-06-25-run-linux-on-windows-03-docker-05-firewall-detected.png)
 
 
-사용하고 있는 방화벽을 해지해도 위의 메시지가 나타날 수 있습니다.
+    사용하고 있는 방화벽을 해지해도 위의 메시지가 나타날 수 있습니다.
 
 
-이 문제의 원인과 해결방법을 이해하기 위해서는 리눅스 운영체제 위에서의 도커와 Docker for Windows 간의 차이를 이해해야 합니다.
+    이 문제의 원인과 해결방법을 이해하기 위해서는 리눅스 운영체제 위에서의 도커와 Docker for Windows 간의 차이를 이해해야 합니다.
 
-- - -
-[이하 출처](http://web-front-end.tistory.com/79)
-
-
-![Linux Docker vs Windows Docker](../assets/images/2018-06-25-run-linux-on-windows-03-docker-06-docker-for-windows.png)
+    - - -
+    [이하 출처](http://web-front-end.tistory.com/79)
 
 
-위의 그림에서 확인할 수 있듯이, 윈도우 위에서는 리눅스에서와 달리 리눅스 가상 머신 (Hyper-V라는 윈도우 네이티브 (native) 하이퍼바이저 이용) 위에 도커 엔진이 동작합니다.
+    ![Linux Docker vs Windows Docker](../assets/images/2018-06-25-run-linux-on-windows-03-docker-06-docker-for-windows.png)
 
 
-그 이유는 도커가 리눅스 컨테이너 (Linux Container, LXC)라는 운영체제 수준의 가상화 기술을 이용해, 리눅스 외의 운영체제에서는 리눅스 가상 머신을 필요로 하기 때문입니다.
-- - -
-
-이때 기본적으로 445번 포트를 사용하기 때문에 해당 포트가 열려 있는지 확인해야 합니다.
+    위의 그림에서 확인할 수 있듯이, 윈도우 위에서는 리눅스에서와 달리 리눅스 가상 머신 (Hyper-V라는 윈도우 네이티브 (native) 하이퍼바이저 이용) 위에 도커 엔진이 동작합니다.
 
 
-이는 (Windows 10 기준) Windows Defender 보안 센터 > 고급설정 > 인바운드 규칙에서 확인해주세요 (아래 그림 참조).
+    그 이유는 도커가 리눅스 컨테이너 (Linux Container, LXC)라는 운영체제 수준의 가상화 기술을 이용해, 리눅스 외의 운영체제에서는 리눅스 가상 머신을 필요로 하기 때문입니다.
+    - - -
+
+    이때 기본적으로 445번 포트를 사용하기 때문에 해당 포트가 열려 있는지 확인해야 합니다.
 
 
-![Windows Defender screenshot](../assets/images/2018-06-25-run-linux-on-windows-03-docker-07-windows-defender-screenshot.png)
+    이는 (Windows 10 기준) Windows Defender 보안 센터 > 고급설정 > 인바운드 규칙에서 확인해주세요 (아래 그림 참조).
+
+
+    ![Windows Defender screenshot](../assets/images/2018-06-25-run-linux-on-windows-03-docker-07-windows-defender-screenshot.png)
 
 
 3. 컨테이너에서 마운트한 볼륨의 파일 등이 표시되지 않는 경우
 
-파일 공유를 위해서는 윈도우 사용자 인증 정보가 필요합니다. 인증 정보가 일치하지 않는 경우 파일 등이 컨테이너 안에서 표시되지 않을 수 있습니다.
+    파일 공유를 위해서는 윈도우 사용자 인증 정보가 필요합니다. 인증 정보가 일치하지 않는 경우 파일 등이 컨테이너 안에서 표시되지 않을 수 있습니다.
 
 
-필자의 경우 윈도우 사용자 인증 정보 변경으로 해당 문제가 발생했는데, 아래와 같이 진행하여 문제를 해결했습니다.[12]
+    필자의 경우 윈도우 사용자 인증 정보 변경으로 해당 문제가 발생했는데, 아래와 같이 진행하여 문제를 해결했습니다.[12]
 
 
-우선 도커 세팅에 들어갑니다.
+    우선 도커 세팅에 들어갑니다.
 
 
-![Docker setting](../assets/images/2018-06-25-run-linux-on-windows-03-docker-08-docker-setting.png)
+    ![Docker setting](../assets/images/2018-06-25-run-linux-on-windows-03-docker-08-docker-setting.png)
 
 
-위 그림 좌측의 도커 아이콘을 우클릭하면 그림의 우측과 같이 세팅에 진입할 수 있습니다.
+    위 그림 좌측의 도커 아이콘을 우클릭하면 그림의 우측과 같이 세팅에 진입할 수 있습니다.
 
 
-세팅에서 **Shared Drives** 탭에 진입합니다. 아래의 그림과 같이 모든 드라이브의 **Shared 체크 해지**해주시고, **Reset Credentials**를 클릭해줍니다.
+    세팅에서 **Shared Drives** 탭에 진입합니다. 아래의 그림과 같이 모든 드라이브의 **Shared 체크 해지**해주시고, **Reset Credentials**를 클릭해줍니다.
 
 
-![Docker setting shared drives](../assets/images/2018-06-25-run-linux-on-windows-03-docker-09-docker-setting-shared-drives.png)
+    ![Docker setting shared drives](../assets/images/2018-06-25-run-linux-on-windows-03-docker-09-docker-setting-shared-drives.png)
 
 
-이제 아래 그림과 같이 내 컴퓨터 > 마운트할 드라이브를 우클릭 후 속성을 클릭해줍니다.
+    이제 아래 그림과 같이 내 컴퓨터 > 마운트할 드라이브를 우클릭 후 속성을 클릭해줍니다.
 
 
-![Drive property](../assets/images/2018-06-25-run-linux-on-windows-03-docker-10-drive-property.png)
+    ![Drive property](../assets/images/2018-06-25-run-linux-on-windows-03-docker-10-drive-property.png)
 
 
-이후 공유 탭에 들어가 고급 공유 > 선택한 폴더 공유 체크를 해지해줍니다.
-![Drive property share](../assets/images/2018-06-25-run-linux-on-windows-03-docker-11-drive-share.png)
+    이후 공유 탭에 들어가 고급 공유 > 선택한 폴더 공유 체크를 해지해줍니다.
+    ![Drive property share](../assets/images/2018-06-25-run-linux-on-windows-03-docker-11-drive-share.png)
 
 
-다시 도커 세팅 > Shared Drives에서 공유할 드라이브를 체크해주시고 **Apply**를 눌러 윈도우 사용자 인증 정보를 기입합니다.
+    다시 도커 세팅 > Shared Drives에서 공유할 드라이브를 체크해주시고 **Apply**를 눌러 윈도우 사용자 인증 정보를 기입합니다.
 
 
 4. 호스트 80 포트의 사용
 
 
-윈도우의 경우 80과 같은 일반 포트(general port, ports < 1024)는 시스템에 의해 보호 받습니다.[13]
+    윈도우의 경우 80과 같은 일반 포트(general port, ports < 1024)는 시스템에 의해 보호 받습니다.[13]
 
 
-(이 경우 아래와 같은 메시지가 표시됩니다.)
+    (이 경우 아래와 같은 메시지가 표시됩니다.)
 
-```
-docker: Error response from daemon: driver failed programming external connectivity on endpoint XXXXX: Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error Permission denied.
-```
+    ```
+    docker: Error response from daemon: driver failed programming external connectivity on endpoint XXXXX: Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error Permission denied.
+    ```
 
 
-굳이 80 포트이어야 할 필요가 없어 필자는 호스트 8000로 컨테이너 실행을 진행했습니다.
+    굳이 80 포트이어야 할 필요가 없어 필자는 호스트 8000로 컨테이너 실행을 진행했습니다.
 
 
 5. 컨테이너 생성 혹은 기기 종료 후 재실행 시 포트 초기화 문제
 
 
-해당 문제는 윈도우 운영체제에서 종종 발견되는 문제로 보입니다.[14]
+    해당 문제는 윈도우 운영체제에서 종종 발견되는 문제로 보입니다.[14]
 
 
-문제 발생 화면은 아래와 같습니다.
+    문제 발생 화면은 아래와 같습니다.
 
 
-![Docker problem](../assets/images/2018-06-25-run-linux-on-windows-03-docker-12-docker-problem.png)
+    ![Docker problem](../assets/images/2018-06-25-run-linux-on-windows-03-docker-12-docker-problem.png)
 
 
-이 문제에 대한 해결 방법은 크게 두 가지가 제시되고 있는데, 첫번째는 아래 그림과 같이 제어판 > 전원 옵션 > 전원 단추 정의 및 암호 보호 설정에서 종료 설정 > 빠른 시작 켜기 체크 해지하는 방법입니다.
+    이 문제에 대한 해결 방법은 크게 두 가지가 제시되고 있는데, 첫번째는 아래 그림과 같이 제어판 > 전원 옵션 > 전원 단추 정의 및 암호 보호 설정에서 종료 설정 > 빠른 시작 켜기 체크 해지하는 방법입니다.
 
 
-![Power Option](../assets/images/2018-06-25-run-linux-on-windows-03-docker-13-power-option.png)
+    ![Power Option](../assets/images/2018-06-25-run-linux-on-windows-03-docker-13-power-option.png)
 
 
-두 번째 방법은 도커 사용 후 모든 컨테이너를 실행 종료하고, 도커까지 종료시키는 방법입니다.
+    두 번째 방법은 도커 사용 후 모든 컨테이너를 실행 종료하고, 도커까지 종료시키는 방법입니다.
 
 
-일부 첫 번째 방법은 권장하지 않는 의견이 있어, 필자는 두 번째 방법을 사용하고 있습니다.
+    일부 첫 번째 방법은 권장하지 않는 의견이 있어, 필자는 두 번째 방법을 사용하고 있습니다.
 
 
 우분투 컨테이너의 생성이 완료되었다면, ```docker start container-name```명령어를 이용해 컨테이너를 실행합니다.(주의하셔야 할 점은 ```--link``` 옵션으로 연결된 컨테이너부터 실행해야 한다는 점입니다. ```docker-compose```를 이용하면 이를 보다 쉽게 관리할 수 있다고 하는데, 이에 대해서는 추후에 공부하여 포스팅하도록 하겠습니다!)
