@@ -62,6 +62,8 @@ tags: Database SQL SQLD SQL개발자 자격증
     * 입력 / 수정 / 삭제 성능이 향상될 수 있음
         * 데이터 용량이 최소화되기 때문
     * 조회 성능이 향상될 수도, 저하될 수도 있음
+
+
 - - -
 [이하 출처](http://whitehats.tistory.com/29)
 * 릴레이션
@@ -69,6 +71,8 @@ tags: Database SQL SQLD SQL개발자 자격증
 * 튜플 (또는 레코드)[2]
     * 릴레이션의 행
 - - -
+
+
 이하 출처 목록
 * http://whitehats.tistory.com/30?category=632088
 * http://wiki.gurubee.net/pages/viewpage.action?pageId=33751579
