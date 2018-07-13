@@ -1,7 +1,8 @@
 ---
 title:  "데이터 모델과 성능"
 date:   2018-07-04 13:19:05 +0900
-tags: Database SQL SQLD SQL개발자 자격증 
+tags: Database SQL SQLD SQL개발자 자격증
+share: false 
 ---
 
 아래의 내용은 *한국데이터진흥원. 2013. SQL 전문가 가이드. 서울: (주)태산애드컴.*의 요약에 개인적으로 공부한 내용을 추가해 작성했습니다.
