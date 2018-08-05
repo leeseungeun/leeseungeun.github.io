@@ -16,6 +16,15 @@ ascii codec can't encode characters in position 0-1 ordinal not in range(128)
 처음엔 파이썬에서의 인코딩/디코딩 문제인 줄 알고 ```encode()```, ```decode()```를 이용했지만 동일한 문제가 발생했습니다.  
 찾아보니 파이썬2.x에서는 기본 인코딩이 ```ascii```였으나, 파이썬3부터는 ```utf-8```으로 바뀌었다고 합니다.  
 기본 인코딩이 ```utf-8```으로 바뀜에 따라 이가 문제가 되지 않는 것으로 보입니다.  
+참고로 파이썬의 기본 인코딩 설정을 확인하기 위해서는 아래의 코드를 사용합니다.  
+
+```
+import sys
+
+
+# get default encoding and print it
+print(sys.getdefaultencoding())
+```
 
 이에 따라 호스트 운영체제인 윈도우에서도 동일 코드를 실행해보았습니다.  
 실행 결과 윈도우에서는 문제 없이 코드가 작동하였습니다.  
