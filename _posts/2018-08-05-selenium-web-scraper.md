@@ -13,7 +13,7 @@ tags: 파이썬 셀레니움 스크랩퍼 Python Selenium Scraper
 프로그래밍 상 똑같이 동작하는데 코드를 효율적으로 바꾸는 활동을 의미합니다.  
 이때 기능을 추가해서는 안되며, 코드의 구조에만 신경써야 합니다.  
 
-이전에 진행했던 프로젝트는 소셜네트워크서비스 (Social Network Service, SNS)에서의 맛집 후기가 업체로부터 대가를 제공 받고 작성한 광고성 후기인지, 순수하게 정보 제공을 목적으로 작성하나 비광고성 후기인지 구분해주는 검색 필터링 서비스였습니다.  
+이전에 진행했던 프로젝트는 소셜네트워크서비스 (Social Network Service, SNS)에서의 맛집 후기가 업체로부터 대가를 제공 받고 작성한 광고성 후기인지, 순수하게 정보 제공을 목적으로 작성한 비광고성 후기인지 구분해주는 검색 필터링 서비스였습니다.  
 이 프로젝트를 위해서는 웹 스크래핑 (Web Scraping)이 필요합니다.
 
 ### 웹 크롤링 (Web Crawling) vs 웹 스크래핑 (Web Scraping)[3]
@@ -91,7 +91,7 @@ driver.dispose() - close all browser windows and end session
 driver.quit()
 ```
 
-셀레니움은 브라우저를 코드로써 제어하도록 도와주기 때문에, 별도의 옵션을 추가하지 않으면 실제 브라우져 윈도우가 생성됩니다. 실제 브라우저가 생성되지 않고 조작할 수 있도록 하는 옵션을 ```headless``` 옵션이라고 하는데요. 저는 브라우저를 화면에 표시할 필요가 없어 이 옵션을 아래와 같이 추가했습니다.
+셀레니움은 브라우저를 코드로써 제어하도록 도와주기 때문에, 별도의 옵션을 추가하지 않으면 실제 브라우저 윈도우가 생성됩니다. 실제 브라우저가 생성되지 않고 조작할 수 있도록 하는 옵션을 ```headless``` 옵션이라고 하는데요. 저는 브라우저를 화면에 표시할 필요가 없어 이 옵션을 아래와 같이 추가했습니다.
 
 ```
 options = webdriver.ChromeOptions()
@@ -133,7 +133,7 @@ options.add_argument("--disable-dev-shm-usage")
 ### frame vs iframe
 ```frame``` 태그는 ```frameset``` 태그 안에서 특정 윈도우 (프레임)을 정의합니다. HTML5에서는 지원하지 않으므로 참고 부탁드립니다.[11]   
 ```iframe``` 태그는 인라인 프레임을 지정합니다.[12]    
-```frameset```태그는 화면을 분할해 다른 문서를 각각에 보여줄 수 있고, ```iframe``` 태그는 플로트 (floate)할 수 있다는 점이 둘 간의 차이입니다.  
+```frameset```태그는 화면을 분할해 다른 문서를 각각에 보여줄 수 있고, ```iframe``` 태그는 플로트 (float)할 수 있다는 점이 둘 간의 차이입니다.  
 자신의 도메인에서 나오지 않은 콘텐츠를 포함할 수 있다는 점에서 이 두 태그를 사용할 경우 사용하지 않는 경우에 비해 안전하지 않다고 봅니다.[13]  
 
 두 번째 팁은 ```Xpath```입니다.  
@@ -157,7 +157,7 @@ options.add_argument("--disable-dev-shm-usage")
     <span> text2 </span>
 </p>
 ```
-텍스트를 추출하고 싶다면 셀레니움에서 ```element = driver.find_element_by_xpath(//p))``` (일치하는 모든 요소를 찾는다면 ```elements = driver.find_elements_by_xpath(//p)```)를 이용해 선택한 후, ```element.text``` (또는 ```elements.text```)로써 텍스트를 추출합니다.[16] 
+텍스트를 추출하고 싶다면 셀레니움에서 ```element = driver.find_element_by_xpath('//p'))``` (일치하는 모든 요소를 찾는다면 ```elements = driver.find_elements_by_xpath('//p')```)를 이용해 선택한 후, ```element.text``` (또는 ```elements.text```)로써 텍스트를 추출합니다.[16] 
 
 [1]: https://opentutorials.org/course/1189/13813
 [2]: https://medium.com/@trilliwon/2-%EC%98%A4%EB%9E%98%EC%82%AC%EB%8A%94-%EC%BD%94%EB%93%9C-8a16c82166d2
