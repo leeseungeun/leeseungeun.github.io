@@ -181,7 +181,7 @@ sqlite3
 ``` 
 
 테이블이 생성되었다면 ```boards```라고 결과가 출력됩니다.  
-이제 server.py에 본격적으로 API 관련 코드를 작성해야 합니다. 이는 다음 포스트에 기술하도록 하겠습니다!
+이제 ```server.py```에 본격적으로 API 관련 코드를 작성해야 합니다. 이는 다음 포스트에 기술하도록 하겠습니다!
 
 [1]: https://speakerdeck.com/nerogit/django-vs-flask-ggabobsida?slide=7
 [2]: http://bluese05.tistory.com/44
