@@ -9,6 +9,7 @@ tags: 파이썬 Python KoNLPy Mecab
 
 이전에 진행했던 프로젝트(프로젝트의 상세한 내용은 [여기](../selenium-web-scraper)를 참고해주세요!)의 리팩토링을 하며 파이썬의 대표적인 한국어 자연어 처리 라이브러리 KoNLPy를 사용하게 되었습니다.  
 
+- - -
 ### 자연어 처리 (Natural Language Processing, NLP)
 사람들이 사용하는 언어를 컴퓨터는 이해하지 못합니다. 컴퓨터는 디지털 신호 (**0**과 **1**)로써 정보를 인식하기 때문입니다. 따라서 사람들이 사용하는 언어를 컴퓨터에게 올바르게 인식시키기 위해서는 별도의 처리를 요구합니다. 이를 자연어 처리 (Natural Language Processing, NLP)라고 합니다.  
 
@@ -39,9 +40,10 @@ KoNLPy의 도큐멘테이션 페이지에 접속하시면 KoNLPy에 탑재된 �
 * 동일한 형태가 문장 안에서 다른 의미로 사용되었을 때 (*"나는 밥을 먹는다"* vs *"하늘을 나는 자동차"*) 단어의 의미와 주변부를 살피어 정확하게 품사를 태깅합니다. 
 * 신조어 등 사전에 포함되지 않는 단어를 정확하게 품사 태깅합니다.  
 
+- - -
 ### Mecab[4]
 나라 첨단과학기술대학원대학 (Nara Institute of Science and Technology)에서 일본어 처리를 목적으로 개발한, 오픈소스인 텍스트 세그먼트 (text segment) 라이브러리입니다.  
-KoNLPy의 Mecab 클래스는 은전한닢 프로젝트의 wrapper입니다.[5] 은전한닢 프로젝트는 Mecab과 21세기 세종 계획의 성과물을 이용해, 검색에서 쓸만한 오픈소스 한국어 형태소 분석기를 만드는 것을 목적으로 하고 있습니다.[6]  
+KoNLPy의 Mecab 클래스는 은전한닢 프로젝트의 wrapper (다른 프로그램이 성공적으로 실행될 수 있도록 해주는 프로그램이나 스크립트를 의미)입니다.[5] 은전한닢 프로젝트는 Mecab과 21세기 세종 계획의 성과물을 이용해, 검색에서 쓸만한 오픈소스 한국어 형태소 분석기를 만드는 것을 목적으로 하고 있습니다.[6]  
 - - -
 
 기존 프로젝트에서는 Komoran을 형태소 분석기로서 사용했지만, 위의 장점에 따라 리팩토링 프로젝트에는 Mecab을 사용하기로 결정했습니다.  
@@ -49,7 +51,7 @@ KoNLPy의 Mecab 클래스는 은전한닢 프로젝트의 wrapper입니다.[5] �
 KoNLPy에서 Mecab을 사용하기 위해서는 몇 가지의 작업이 필요합니다. 본 포스팅에서는 이에 대해 다루고자 합니다.[7]
 
 * mecab-ko 설치  
-    mecab-ko는 Mecab의 포크 (fork) 프로젝트로, 최소한의 변경만으로 한국어 특성에 맞는 기능을 추가하는 것을 목표로 합니다.[9]   
+    mecab-ko는 Mecab의 포크 (fork, 레파지토리의 복사본으로, 이를 이용할 경우 원래 레파지토리에 영향을 주지 않고 변경해볼 수 있음) 프로젝트로, 최소한의 변경만으로 한국어 특성에 맞는 기능을 추가하는 것을 목표로 합니다.[9]   
     아래의 명령어를 실행하면, mecab-ko를 설치할 수 있습니다.  
     ```
     # download file using wget
@@ -145,9 +147,9 @@ KoNLPy에서 Mecab을 사용하기 위해서는 몇 가지의 작업이 필요�
 [2]: https://ko.wikipedia.org/wiki/%EC%9E%90%EC%97%B0_%EC%96%B8%EC%96%B4_%EC%B2%98%EB%A6%AC
 [3]: https://ko.wikipedia.org/wiki/%EA%B5%AC%EB%AC%B8_%EB%B6%84%EC%84%9D
 [4]: https://en.wikipedia.org/wiki/MeCab
-[5]: 다른 프로그램이 성공적으로 실행될 수 있도록 해주는 프로그램이나 스크립트를 의미,  https://searchmicroservices.techtarget.com/definition/wrapper, http://www.terms.co.kr/wrapper.htm
+[5]: https://searchmicroservices.techtarget.com/definition/wrapper, http://www.terms.co.kr/wrapper.htm
 [6]: http://eunjeon.blogspot.com/2013/02/blog-post.html
 [7]: https://calyfactory.github.io/mecab%EC%9D%98-custom-dictionary%EC%99%80-konlpy-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/
-[8]: 포크 (fork)란 레파지토리의 복사본으로, 이를 이용할 경우 원래 레파지토리에 영향을 주지 않고 변경해볼 수 있음, https://stackoverflow.com/questions/24939843/what-does-it-mean-to-fork-on-github
+[8]: https://stackoverflow.com/questions/24939843/what-does-it-mean-to-fork-on-github
 [9]: https://bitbucket.org/eunjeon/mecab-ko/src/master/README.md
 [10]: https://curl.haxx.se/docs/manpage.html
