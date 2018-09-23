@@ -1,5 +1,5 @@
 ---
-title:  "도커 우분투 컨테이너의 터미널에서 한글 입출력하기"
+title:  "도커 우분투 컨테이너의 터미널에서 한글 입출력하기 1탄"
 date:   2018-08-05 20:23:05 +0900
 tags: 운영체제 리눅스 우분투 도커 Docker Linux Ubuntu
 ---
@@ -60,11 +60,11 @@ dpkg-reconfigure locales
 링크된 블로그에서는 나오지 않지만 ```dpkt-reconfigure locales``` 명령어를 실행하면,  
 아래와 같이 생성할 로케일을 선택하고 시스템 전체의 기본 언어를 설정하는 화면이 나타납니다.
 
-![dpkt-reconfigure locales](../assets/images/2018-08-05-how-to-write-read-korean-in-docker-ubuntu-terminal-01-locale-generation.png)
+![dpkt-reconfigure locales](../assets/images/2018-08-05-how-to-write-read-korean-in-docker-ubuntu-terminal-01-01-locale-generation.png)
 
 
 위와 같은 메시지가 나타나면, 화면을 참고해 생성할 로케일의 숫자를 입력함으로써 생성할 로케일을 선택합니다.  
 그리고 안내되는 바와 같이 숫자를 입력해 시스템 전체의 기본 언어를 설정합니다.  
 이를 완료하면, ```locale```명령어를 입력했을 때 아래와 같이 설정한 바가 표시됩니다!
 
-![locale setting completed](../assets/images/2018-08-05-how-to-write-read-korean-in-docker-ubuntu-terminal-02-locale-setting-completed.png)
+![locale setting completed](../assets/images/2018-08-05-how-to-write-read-korean-in-docker-ubuntu-terminal-01-02-locale-setting-completed.png)
