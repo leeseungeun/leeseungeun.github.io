@@ -50,6 +50,40 @@ KoNLPy의 Mecab 클래스는 은전한닢 프로젝트의 wrapper (다른 프로
 
 KoNLPy에서 Mecab을 사용하기 위해서는 몇 가지의 작업이 필요합니다. 본 포스팅에서는 이에 대해 다루고자 합니다.[7]
 
+* MeCab 설치  
+    현재 저는 윈도우 머신 위에서 동작하는 우부툰 도커 컨테이너에서 작업을 진행하고 있습니다! 우분투에서 Mecab을 사용하기 위해 설치를 진행합니다. 참고로 KoNLPy의 Mecab 클래스는 윈도우에서 지원되지 않습니다. 우분투에서 MeCab을 설치하는 명령어는 다음과 같습니다.
+    ```
+    # install curl if curl is not installed
+    apt-get install curl
+
+    # install MeCab using curl
+    bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
+    ```
+    ```curl```은 서버 간 데이터를 전송하는 툴입니다. ```curl```은 아래의 프로토콜 중 하나를 사용합니다.[10]
+    * DICT
+    * FILE
+    * FTP
+    * FTPS
+    * GOPHER
+    * HTTP
+    * HTTPS
+    * IMAP
+    * IMAPS
+    * LDAP
+    * LDAPS
+    * POP3
+    * POP3S
+    * RTMP
+    * RTSP 
+    * SCP 
+    * SFTP 
+    * SMB 
+    * SMBS 
+    * SMTP 
+    * SMTPS 
+    * TELNET
+    * TFTP
+
 * mecab-ko 설치  
     mecab-ko는 Mecab의 포크 (fork, 레파지토리의 복사본으로, 이를 이용할 경우 원래 레파지토리에 영향을 주지 않고 변경해볼 수 있음) 프로젝트로, 최소한의 변경만으로 한국어 특성에 맞는 기능을 추가하는 것을 목표로 합니다.[9]   
     아래의 명령어를 실행하면, mecab-ko를 설치할 수 있습니다.  
@@ -61,7 +95,7 @@ KoNLPy에서 Mecab을 사용하기 위해서는 몇 가지의 작업이 필요�
     tar zxfv mecab-0.996-ko-version.tar.gz
 
     # chage directory to unzipped mecab-ko
-    cd mecab-0.996-ko-version.tar.gz
+    cd mecab-0.996-ko-version
 
     # allow to use command line option, execute configure in this directory
     ./configure
@@ -104,45 +138,19 @@ KoNLPy에서 Mecab을 사용하기 위해서는 몇 가지의 작업이 필요�
     make install
     ```
 
-* MeCab 설치  
-    현재 저는 윈도우 머신 위에서 동작하는 우부툰 도커 컨테이너에서 작업을 진행하고 있습니다! 우분투에서 Mecab을 사용하기 위해 설치를 진행합니다. 참고로 KoNLPy의 Mecab 클래스는 윈도우에서 지원되지 않습니다. 우분투에서 MeCab을 설치하는 명령어는 다음과 같습니다.
-    ```
-    # install curl if curl is not installed
-    apt-get install curl
 
-    # install MeCab using curl
-    bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
-    ```
-    ```curl```은 서버 간 데이터를 전송하는 툴입니다. ```curl```은 아래의 프로토콜 중 하나를 사용합니다.[10]
-    * DICT
-    * FILE
-    * FTP
-    * FTPS
-    * GOPHER
-    * HTTP
-    * HTTPS
-    * IMAP
-    * IMAPS
-    * LDAP
-    * LDAPS
-    * POP3
-    * POP3S
-    * RTMP
-    * RTSP 
-    * SCP 
-    * SFTP 
-    * SMB 
-    * SMBS 
-    * SMTP 
-    * SMTPS 
-    * TELNET
-    * TFTP
+위의 설치를 완료해주셔도 Java가 설치되지 않은 경우 ```Exception: Install MeCab in order to use it: http://konlpy.org/en/latest/install/``` 메시지가 등장할 수 있습니다. 그러니 품사 태깅 전 꼭 Java를 설치해주시길 바랍니다!  
+도커 우분투 컨테이너를 기준으로 Java를 설치하는 법은 아래와 같습니다.[11]    
+```
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
+```
+
 
 여기까지 완료하면 이제 KoNLPy의 Mecab을 이용해 품사 태깅이 가능합니다. KoNLPy의 Mecab 클래스를 이용한 품사 태깅 결과는 아래와 같습니다!
 
 ![Mecab result](../assets/images/2018-08-25-konly-mecab-02-mecab-result.png)
  
-
 [1]: https://konlpy-ko.readthedocs.io/ko/v0.4.3/
 [2]: https://ko.wikipedia.org/wiki/%EC%9E%90%EC%97%B0_%EC%96%B8%EC%96%B4_%EC%B2%98%EB%A6%AC
 [3]: https://ko.wikipedia.org/wiki/%EA%B5%AC%EB%AC%B8_%EB%B6%84%EC%84%9D
@@ -153,3 +161,4 @@ KoNLPy에서 Mecab을 사용하기 위해서는 몇 가지의 작업이 필요�
 [8]: https://stackoverflow.com/questions/24939843/what-does-it-mean-to-fork-on-github
 [9]: https://bitbucket.org/eunjeon/mecab-ko/src/master/README.md
 [10]: https://curl.haxx.se/docs/manpage.html
+[11]: https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
