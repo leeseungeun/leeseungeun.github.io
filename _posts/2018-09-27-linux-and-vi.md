@@ -65,7 +65,7 @@ yum \| apt-get remove package-name|package-name의 패키지를 삭제해줍니�
 ```ls```|현재 디렉토리의 하위 디렉토리와 파일을 표시해줍니다. <br/> ```-l``` 옵션, ```-a``` 옵션과 함께 자주 사용됩니다. <br/> ```-l``` 옵션은 long listing format으로 디렉토리인지 여부, 권한, 하드 링크의 수, 소유자와 그 그룹, 생성 /  수정일, 크기, 이름을 표시해줍니다.[17] <br/> ```-a``` 옵션은 숨김 파일까지 표시해줍니다. <br/> ```/home/user_name/.bashrc``` 또는 ```/etc/bashrc```에 alias를 등록하면 ```ll``` 명령어로써 ```ls -al```명령을 사용할 수 있게 됩니다.[18]<br/> 인자를 생략할 경우 현재 디렉토리에 대한 정보를 얻을 수 있지만, ```ls -options some_directory_or_file``` 형태로 사용할 경우 특정 하위 디렉토리 또는 파일을 지정해 그 정보를 볼 수 있습니다.  
 ```mkdir```|```make directory```의 약자로 디렉토리 생성 시 사용합니다. ```mkdir directory_name``` 형태로 사용합니다.
 ```rmdir```|```remove directory```의 약자로 디렉토리 삭제 시 사용합니다. <br/> ```rmdir directory_name``` 형태로 사용하며, 해당 디렉토리가 존재하지 않을 경우 ```No such file or directory```라는 메시지가 표시됩니다. <br/> <b>단, 지우고자 하는 디렉토리가 비어있지 않을 경우에는 이 명령어를 사용할 수 없습니다.</b>
-```touch```|```touch directory/file_name.extension``` 형태로 사용하며, file_name을 이름으로 가지는 파일을 생성합니다.
+```touch```|```touch path/file_name.extension``` 형태로 사용하며, file_name을 이름으로 가지는 파일을 생성합니다.
 ```rm```|```remove```의 약자로 파일 또는 디렉토리를 삭제할 때 사용합니다. <br/> 빈번하게 같이 사용하는 옵션으로는 ```-f```와 ```-r```이 있습니다. <br/> ```-f``` 옵션은 ```--force``` 옵션으로 옵션의 이름대로 **강제로** 파일을 삭제합니다. 이 옵션을 사용할 경우 중요한 파일이 삭제될 수 있기 때문에 사용 시에 유의해야 합니다. <br/> ```-r``` 옵션은 ```--recursive```옵션으로 디렉토리와 그 안의 컨텐츠를 삭제합니다. ```rmdir``` 명령어 사용 시 디렉토리에 파일이 존재할 경우 해당 명령어를 사용할 수 없었는데, 이와 같은 경우 ```rm -r directort-name``` 명령어를 사용하시면 됩니다.
 ```cat```|파일의 내용을 확인할 때 사용하는 명령어입니다.
 ```head```|파일의 앞 부분만을 확인할 때 사용하는 명령어입니다.
@@ -89,9 +89,33 @@ yum \| apt-get remove package-name|package-name의 패키지를 삭제해줍니�
 whoami|로그인한 사용자의 이름을 출력해줍니다.
 passwd|이 명령어를 사용할 시 로그인한 사용자의 비밀번호를 변경할 수 있습니다.
 
-이상이 bash 셸의 기본 명령어입니다. 아래부터는 vi 또는 vim의 명령어를 다루고자 합니다.
+이상이 bash 셸의 기본 명령어입니다. 아래부터는 VI 또는 VIM의 명령어를 다루고자 합니다. VI는 Emacs와 함께 유닉스 환경에서 자주 사용되는 문서 편집기입니다.[20] VIM은 Vi IMproved의 약자로 개선된 VI라고 생각하시면 됩니다.   
 
-* VI / VIM
+VI에는 ```vi```, ```command```, 그리고 ```input``` 세 가지 모드가 존재합니다.[21] ```vi``` 모드는 처음 명령어를 실행했을 떄의 상태입니다. VI (또는 VIM)은 ```vi file-name``` 또는 ```vim file-name``` 명령어로 시작합니다. ```vi```모드는 ```esc``` 키를 눌렀을 때에도 들어갈 수 있습니다.
+
+![VI mode](../assets/images/2018-09-27-linux-and-vi-04-vi-mode.png)
+
+위는 ```vi``` 모드입니다. 아래는 ```vi```모드에서 자주 쓰는 명령어입니다.
+
+명령어|기능
+------|----
+```i```|현재 커서 위치에서 ```input``` 모드를 시작합니다.
+```dd```|한 줄을 삭제합니다.
+```/```|```/pattern```의 형태로 사용하며, 이 경우 pattern과 일치하는 부분을 찾아 표시해줍니다.
+
+```command``` 모드는 ```:``` 키를 누르면 진입할 수 있습니다. ```command``` 모드에 진입하면, 완쪽 하단에 ```:```가 표시됩니다. 명령어를 그 이후에 입력하시면 됩니다.  
+
+![command mode](../assets/images/2018-09-27-linux-and-vi-05-command-mode.png)
+
+위는 ```command``` 모드입니다. 아래는 ```command``` 모드에서 자주 쓰는 명령어입니다.
+
+명령어|기능
+------|----
+```:set nu```|코드 줄 번호를 표시합니다.
+```:q```|저장하지 않고 파일을 빠져나옵니다. 변경사항이 있는데, 이 명령어를 실행하고 싶은 경우 ```:q!``` 명령어를 사용합니다.
+```:w```|변경사항을 저장합니다. ```:wq```와 같이 ```q``` 명령어를 함께 사용하면, 변경사항을 저장하고 파일을 빠져나옵니다.
+
+마지막은 ```input```모드입니다. 앞서 한 설명처럼 ```i``` 키를 누르면 진입이 가능하며, ```input```모드에서는 편집이 가능합니다.
 
 [1]: https://en.wikipedia.org/wiki/Operating_system
 [2]: https://www.enotes.com/homework-help/what-types-advantages-operating-systems-159167
@@ -112,3 +136,5 @@ passwd|이 명령어를 사용할 시 로그인한 사용자의 비밀번호를 
 [17]: https://linuxconfig.org/understanding-of-ls-command-with-a-long-listing-format-output-with-permission-bits
 [18]: http://sens.tistory.com/20
 [19]:https://kb.iu.edu/d/abbe
+[20]: https://ko.wikipedia.org/wiki/Vi
+[21]: http://rcsg-gsir.imsb-dsgi.nrc-cnrc.gc.ca/documents/basic/node168.html
