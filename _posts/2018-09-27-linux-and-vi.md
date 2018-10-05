@@ -14,7 +14,7 @@ tags: 운영체제 리눅스 우분투 Docker Linux Ubuntu Vi Vim
 ## 운영 체제 (Operating System)[1][2]
 하드웨어와 소프트웨어 자원 (Software Resource)을 관리하는 시스템 소프트웨어 (System Software)입니다. 구체적인 운영 체제의 관리 대상으로 CPU, 메모리, I/O 장치 (이상 하드웨어), 응용 프로그램, 응용 프로그램 간 권한, 응용 프로그램의 사용자 등이 있습니다. 이를 관리함으로써 운영 체제는 GUI (Graphical User Interface), 다중 사용자 (Multiuser), 멀티 테스킹 (Multitasking), 멀티 프로세싱(Multiprocessing), 멀티 쓰레딩 (Multithreading)을 지원합니다. 아래는 운영 체제를 그림으로써 설명한 것입니다.
 
-<img src="../assets/images/2018-09-27-linux-and-vi-01-os.jpg" alt="Operating System" width="40%">
+![Operating System](../assets/images/2018-09-27-linux-and-vi-01-os.jpg)
 
 ### 소프트웨어 자원 (Software Resource)[3]
 소프트웨어를 설명하는 보편적인 방법을 나타내며, 소프트웨어의 특정 인스턴스를 설명하는 메타 데이터로 구성되어 있습니다. 메타 데이터로는 속성 (Properties), 타입 (Type), 패키지 자원 (Package Resources) 등이 있습니다. 각 메타 데이터의 구체적인 내용은 링크의 사이트를 내용을 참고해주세요!
