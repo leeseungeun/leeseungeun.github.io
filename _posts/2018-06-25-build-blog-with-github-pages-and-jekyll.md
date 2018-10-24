@@ -11,14 +11,14 @@ tags: ["github pages", "jekyll"]
 블로그에 공부한 바를 정리하기 위해서, Github Pages와 Jekyll을 사용하게 되었습니다.
 
 
-## Github Pages [^1]
+## Github Pages [1]
 Github 리포지토리를 통해 정적 사이트를 호스팅하는 서비스로,
 
 
 내부 엔진으로 Jekyll을 사용합니다.
 
 
-## Jekyll [^2]
+## Jekyll [2]
 루비 기반 정적 사이트 생성기입니다.
 
 
@@ -31,7 +31,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
 
 1. 도커로써 우분투 (Ubuntu) 개발 환경 설정
 
-    윈도우 운영체제 위에서 루비 사용은 권장되지 않습니다.[^3][^4]  
+    윈도우 운영체제 위에서 루비 사용은 권장되지 않습니다.[3][4]  
     * 유닉스 계열 운영체제에서와 비교했을 때, 윈도우 운영체제에서 루비는 느립니다.
     * 일부 젬(Gem)과 라이브러리는 윈도우 운영체제에서 동작하지 않습니다.
 
@@ -44,7 +44,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
 
 2. Jekyll 설치
 
-    Jekyll 설치에는 준비 프로그램이 필요합니다.[^5]
+    Jekyll 설치에는 준비 프로그램이 필요합니다.[5]
 
 
     준비 프로그램의 목록은 아래와 같습니다.
@@ -93,7 +93,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
 
 4. 테마 적용
 
-    여러 기능을 제공하고 커스터마이즈가 용이한 Minimal Mistakes Jekyll Theme을 블로그에 적용했습니다.[^6]
+    여러 기능을 제공하고 커스터마이즈가 용이한 Minimal Mistakes Jekyll Theme을 블로그에 적용했습니다.[6]
 
     테마 적용을 위해서는 ```jekyll new .``` 명령어로 생성한 ```Gemfile```의 수정이 필요합니다.
 
@@ -137,7 +137,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
         apt-get install zlib1g-dev
         apt-get install libxml2-dev
         ```
-        이에 따라 위의 명령어를 실행함으로써, zlib1g-dev와 libxml2-dev를 설치해 문제를 해결했습니다.[^7]
+        이에 따라 위의 명령어를 실행함으로써, zlib1g-dev와 libxml2-dev를 설치해 문제를 해결했습니다.[7]
 
     - - -
 
@@ -174,7 +174,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
     * 태그 메뉴 추가
 
 
-        ```_data/navigation.yml```과 ```_pages/tag-archive.html```을 추가합니다.[^8]
+        ```_data/navigation.yml```과 ```_pages/tag-archive.html```을 추가합니다.[8]
         * ```_data/navigation.yml```
         
         ```
@@ -204,7 +204,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
     * 댓글 기능 추가
 
 
-        댓글을 직접 구현하지 않고 위젯의 형태로 서비스에 삽입할 수 있는 댓글 전문 서비스인 Disqus를 이용했습니다.[^9]
+        댓글을 직접 구현하지 않고 위젯의 형태로 서비스에 삽입할 수 있는 댓글 전문 서비스인 Disqus를 이용했습니다.[9]
 
 
         Minimal-Mistakes-Jekyll-Theme에서는 ```_config.yml```의 편집으로 간단하게 댓글 기능을 추가할 수 있습니다.
@@ -248,7 +248,7 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
         위와 같이 ```_config.yml``` 기본 설정을 지정해주면 개별 포스트마다 관련 설정을 할 필요가 없습니다.
 
 
-        다만, ```config.yml```과 다르게 설정해야 할 포스트가 존재한다면 해당 포스트를 다음과 같이 작성해 설정을 변경할 수 있습니다.[^10]
+        다만, ```config.yml```과 다르게 설정해야 할 포스트가 존재한다면 해당 포스트를 다음과 같이 작성해 설정을 변경할 수 있습니다.[10]
 
         ```
         ---
@@ -270,13 +270,13 @@ Github Pages와 Jekyll은 아래의 과정을 거쳐 설정했습니다.
     해당 리포지토리에 작업한 내용을 커밋 및 푸시하면 ```https://user_name.github.io```에 블로그 내용이 표시됩니다!
 
 
-[^1]: https://help.github.com/articles/what-is-github-pages
-[^2]: https://jekyllrb-ko.github.io/docs/home/
-[^3]: https://stackoverflow.com/questions/164896/limitations-in-running-ruby-rails-on-windows
-[^4]: https://www.reddit.com/r/ruby/comments/65n186/is_rubyror_on_windows_really_that_bad
-[^5]: http://blog.napier.kr/blog/2016/09/01/jekyll-ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
-[^6]: https://github.com/mmistakes/minimal-mistakes
-[^7]: https://stackoverflow.com/questions/30780988/error-installing-nokogiri-in-ubuntu-14-0-4-ruby-1-8-7
-[^8]: https://junhobaik.github.io/jekyll-apply-theme
-[^9]: https://opentutorials.org/course/2473/13865
-[^10]: https://mmistakes.github.io/minimal-mistakes/docs/configuration
+[1]: https://help.github.com/articles/what-is-github-pages
+[2]: https://jekyllrb-ko.github.io/docs/home/
+[3]: https://stackoverflow.com/questions/164896/limitations-in-running-ruby-rails-on-windows
+[4]: https://www.reddit.com/r/ruby/comments/65n186/is_rubyror_on_windows_really_that_bad
+[5]: http://blog.napier.kr/blog/2016/09/01/jekyll-ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
+[6]: https://github.com/mmistakes/minimal-mistakes
+[7]: https://stackoverflow.com/questions/30780988/error-installing-nokogiri-in-ubuntu-14-0-4-ruby-1-8-7
+[8]: https://junhobaik.github.io/jekyll-apply-theme
+[9]: https://opentutorials.org/course/2473/13865
+[10]: https://mmistakes.github.io/minimal-mistakes/docs/configuration
